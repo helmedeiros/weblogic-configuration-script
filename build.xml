@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="weblogic-configuration" basedir="." default="createManagedServerConfig">
+
+	<import file="ant\configuration-ant-defs.xml"/>
+
+</project>

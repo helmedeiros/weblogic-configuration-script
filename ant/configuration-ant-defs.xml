@@ -1,0 +1,51 @@
+<project name="configuration-ant-defs" default="">
+	
+	<taskdef name="wlst" classname="weblogic.ant.taskdefs.management.WLSTTask" />
+	
+	<target name="configureOptions">
+		<echo message="Config Env --> #${configEnv}#"/>
+		<echo message="Config Action --> #${configAction}#"/>
+		<input message="Please enter the type of environment to config:" addproperty="configEnv" validargs="LOCAL" defaultvalue="LOCAL" />
+		<input message="Action for configuration" addproperty="configAction" validargs="RESET,SET,SAVE" defaultvalue="SET" />
+		<condition property="do.override">          
+			<matches pattern="^reset$" string="${configAction}" casesensitive="no"/>
+        </condition>
+		<condition property="do.backup">          
+			<matches pattern="^set|save$" string="${configAction}" casesensitive="no"/>
+        </condition>
+		<condition property="do.action">          
+			<matches pattern="^set$" string="${configAction}" casesensitive="no"/>
+        </condition>
+		<echo message="do.action Value   --> #${do.action}# "/>
+		<echo message="do.backup Value   --> #${do.backup}# "/>
+		<echo message="do.override Value --> #${do.override}# "/>
+	</target>
+		
+	
+	
+	<target name="cleanManagedServerConfig" depends="configureOptions" if="do.override">
+		<echo message="Please verify if Node Manager is up and running..."/>
+		<echo message="Cleaning Managed Server configuration..."/>
+		<wlst debug="false" failOnError="true" 
+	   	properties="${basedir}\conf\${configEnv}_wlst.properties"
+		fileName="${basedir}\wlst-scripts\serverCleanConfig.py"/>
+	</target>
+	
+	<target name="createManagedServerConfig" depends="cleanManagedServerConfig">
+		<echo message="Please verify if Node Manager is up and running..."/>
+		<echo message="Configuring Managed Server..."/>
+		<echo message="configEnv Start..."/>
+		<echo message="${configEnv}"/>
+		<echo message="configEnv End..."/>
+		
+		<echo message="configAction Start..."/>
+		<echo message="${configAction}"/>
+		<echo message="configAction End..."/>
+		
+		
+		<wlst debug="false" failOnError="true" 
+	   	properties="${basedir}\conf\${configEnv}_wlst.properties"
+		fileName="${basedir}\wlst-scripts\serverConfig.py"/>
+	</target>
+	
+</project>
