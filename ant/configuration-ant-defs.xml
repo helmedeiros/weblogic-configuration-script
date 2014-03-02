@@ -61,5 +61,19 @@
 		arguments="${basedir}/conf/"
 		fileName="${basedir}\wlst\classpathSetConfig.py"/>
 	</target>
+
+	<target name="bkpVMArgsConfig" depends="configureOptions" if="do.backup">
+		<wlst debug="false" failOnError="true" 
+	   	properties="${basedir}\conf\${configEnv}_wlst.properties"
+		arguments="${basedir}/conf/"
+		fileName="${basedir}\wlst\vmArgsBkpConfig.py"/>
+	</target>
+	
+	<target name="createVMArgsConfig" depends="bkpVMArgsConfig" unless="do.action">
+		<wlst debug="false" failOnError="true" 
+	   	properties="${basedir}\conf\${configEnv}_wlst.properties"
+		arguments="${basedir}/conf/"
+		fileName="${basedir}\wlst\vmArgsSetConfig.py"/>
+	</target>
 	
 </project>
