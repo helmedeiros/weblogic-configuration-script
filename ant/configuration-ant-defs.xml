@@ -28,7 +28,7 @@
 		<echo message="Cleaning Managed Server configuration..."/>
 		<wlst debug="false" failOnError="true" 
 	   	properties="${basedir}\conf\${configEnv}_wlst.properties"
-		fileName="${basedir}\wlst-scripts\serverCleanConfig.py"/>
+		fileName="${basedir}\wlst\serverCleanConfig.py"/>
 	</target>
 	
 	<target name="createManagedServerConfig" depends="cleanManagedServerConfig">
@@ -45,7 +45,21 @@
 		
 		<wlst debug="false" failOnError="true" 
 	   	properties="${basedir}\conf\${configEnv}_wlst.properties"
-		fileName="${basedir}\wlst-scripts\serverConfig.py"/>
+		fileName="${basedir}\wlst\serverConfig.py"/>
+	</target>
+
+	<target name="bkpClasspathConfig" depends="configureOptions" if="do.backup">
+		<wlst debug="false" failOnError="true" 
+	   	properties="${basedir}\conf\${configEnv}_wlst.properties"
+		arguments="${basedir}/conf/"
+		fileName="${basedir}\wlst\classpathBkpConfig.py"/>
+	</target>
+	
+	<target name="createClasspathConfig" depends="bkpClasspathConfig" unless="do.action">
+		<wlst debug="false" failOnError="true" 
+	   	properties="${basedir}\conf\${configEnv}_wlst.properties"
+		arguments="${basedir}/conf/"
+		fileName="${basedir}\wlst\classpathSetConfig.py"/>
 	</target>
 	
 </project>
