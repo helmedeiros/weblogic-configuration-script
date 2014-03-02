@@ -1,5 +1,5 @@
 @rem *************************************************************************
-@rem This script is used to set up the Managed Servers properties to DFSL   
+@rem This script is used to set up the Managed Servers BASED ON THE CONF FILES   
 @rem *************************************************************************
 @echo At the first time configure the Classapath 
 CALL "%WORKSPACE%\cmds\setWLSEnvironment.cmd"
