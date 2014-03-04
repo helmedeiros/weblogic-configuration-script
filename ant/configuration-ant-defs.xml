@@ -27,8 +27,8 @@
 		<echo message="Please verify if Node Manager is up and running..."/>
 		<echo message="Cleaning Managed Server configuration..."/>
 		<wlst debug="false" failOnError="true" 
-	   	properties="${basedir}\conf\${configEnv}_wlst.properties"
-		fileName="${basedir}\wlst\serverCleanConfig.py"/>
+	   	properties="${basedir}/conf/${configEnv}_wlst.properties"
+		fileName="${basedir}/wlst/serverCleanConfig.py"/>
 	</target>
 	
 	<target name="createManagedServerConfig" depends="cleanManagedServerConfig">
@@ -44,36 +44,36 @@
 		
 		
 		<wlst debug="false" failOnError="true" 
-	   	properties="${basedir}\conf\${configEnv}_wlst.properties"
-		fileName="${basedir}\wlst\serverConfig.py"/>
+	   	properties="${basedir}/conf/${configEnv}_wlst.properties"
+		fileName="${basedir}/wlst/serverConfig.py"/>
 	</target>
 
 	<target name="bkpClasspathConfig" depends="configureOptions" if="do.backup">
 		<wlst debug="false" failOnError="true" 
-	   	properties="${basedir}\conf\${configEnv}_wlst.properties"
+	   	properties="${basedir}/conf/${configEnv}_wlst.properties"
 		arguments="${basedir}/conf/"
-		fileName="${basedir}\wlst\classpathBkpConfig.py"/>
+		fileName="${basedir}/wlst/classpathBkpConfig.py"/>
 	</target>
 	
 	<target name="createClasspathConfig" depends="bkpClasspathConfig" unless="do.action">
 		<wlst debug="false" failOnError="true" 
-	   	properties="${basedir}\conf\${configEnv}_wlst.properties"
+	   	properties="${basedir}/conf/${configEnv}_wlst.properties"
 		arguments="${basedir}/conf/"
-		fileName="${basedir}\wlst\classpathSetConfig.py"/>
+		fileName="${basedir}/wlst/classpathSetConfig.py"/>
 	</target>
 
 	<target name="bkpVMArgsConfig" depends="configureOptions" if="do.backup">
 		<wlst debug="false" failOnError="true" 
-	   	properties="${basedir}\conf\${configEnv}_wlst.properties"
+	   	properties="${basedir}/conf/${configEnv}_wlst.properties"
 		arguments="${basedir}/conf/"
-		fileName="${basedir}\wlst\vmArgsBkpConfig.py"/>
+		fileName="${basedir}/wlst/vmArgsBkpConfig.py"/>
 	</target>
 	
 	<target name="createVMArgsConfig" depends="bkpVMArgsConfig" unless="do.action">
 		<wlst debug="false" failOnError="true" 
-	   	properties="${basedir}\conf\${configEnv}_wlst.properties"
+	   	properties="${basedir}/conf/${configEnv}_wlst.properties"
 		arguments="${basedir}/conf/"
-		fileName="${basedir}\wlst\vmArgsSetConfig.py"/>
+		fileName="${basedir}/wlst/vmArgsSetConfig.py"/>
 	</target>
 	
 </project>
