@@ -24,7 +24,14 @@ Start your project development with right foot. Proceed with **[weblogic install
 	cd $WL_CONFIG_SCRIPT/cmds/sh/
 	./createManagedServerConfig.sh LOCAL SET
 	```
-	
+2. Execute the managed server classpath configuration, e.g. ```SET```, ```RESET``` and ```SAVE```, for SPECIFIC environments, e.g. ```LOCAL```, ```DEV```, ```HLG``` and ```PROD```, using scripts:
+
+	```shell
+	cd $WL_CONFIG_SCRIPT/cmds/sh/
+	./createClasspathConfig.sh LOCAL SET
+	```	
+
+
 ## Setup
 
 In order to run it locally you'll need a basic server setup.
