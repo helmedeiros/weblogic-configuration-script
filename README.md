@@ -31,6 +31,12 @@ Start your project development with right foot. Proceed with **[weblogic install
 	./createClasspathConfig.sh LOCAL SET
 	```	
 
+3. Execute the managed server Virtual Machine arguments configuration, e.g. ```SET```, ```RESET``` and ```SAVE```, for SPECIFIC environments, e.g. ```LOCAL```, ```DEV```, ```HLG``` and ```PROD```, using scripts:
+
+	```shell
+	cd $WL_CONFIG_SCRIPT/cmds/sh/
+	createVMArgsConfig.sh LOCAL SET
+	```	
 
 ## Setup
 
