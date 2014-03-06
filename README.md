@@ -34,3 +34,11 @@ In order to run it locally you'll need a basic server setup.
 3. Log into it with an admin credentials set during the install;
 4. Open the conf/LOCAL_wlst.properties and fill it with your expected configuration;
 
+
+## Contributing
+
+1. Fork it!
+2. Create your feature branch: ```git checkout -b my-new-feature```
+3. Commit your changes: ```git commit -m 'Add some feature'```
+4. Push to the branch: ```git push origin my-new-feature```
+5. Submit a pull request :D
