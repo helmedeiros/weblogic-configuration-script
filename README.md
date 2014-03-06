@@ -18,7 +18,7 @@ weblogic-configuration-script is a [Jython](http://www.jython.org/) set of scrip
 
 Start your project development with right foot. Proceed with **[weblogic installation](http://onlineappsdba.com/index.php/2011/12/11/how-to-install-weblogic-12c-1211-on-mac/)**, after that set everything using automated scripts, and let all your collegues with the same configuration pattern so you all can evolve it together, fixing what's needed from there.
 
-1. Execute the managed server configuration, e.g. ```SET```, ```RESET``` and ```SAVE```, using scripts:
+1. Execute the managed server configuration, e.g. ```SET```, ```RESET``` and ```SAVE```, for SPECIFIC environments, e.g. ```LOCAL```, ```DEV```, ```HLG``` and ```PROD```, using scripts:
 
 	```shell
 	cd $WL_CONFIG_SCRIPT/cmds/sh/
