@@ -30,9 +30,16 @@ Start your project development with right foot. Proceed with **[weblogic install
 In order to run it locally you'll need a basic server setup.
 
 1. Install **[WebLogic](http://onlineappsdba.com/index.php/2011/12/11/how-to-install-weblogic-12c-1211-on-mac/)**;
+
 2. Access **[WebLogic Admin Server](http://localhost:7001/console)**;
+
 3. Log into it with an admin credentials set during the install;
-4. Open the conf/LOCAL_wlst.properties and fill it with your expected configuration;
+
+4. Open the **conf/LOCAL_wlst.properties** and fill it with your expected configuration;
+
+5. Clone the project: ```git clone https://github.com/helmedeiros/weblogic-configuration-script```
+
+6. Define configuration folder:	```export WL_CONFIG_SCRIPT= ~/weblogic-configuration-script```
 
 
 ## Contributing
