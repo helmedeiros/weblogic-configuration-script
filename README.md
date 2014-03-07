@@ -35,7 +35,7 @@ Start your project development with right foot. Proceed with **[weblogic install
 
 	```shell
 	cd $WL_CONFIG_SCRIPT/cmds/sh/
-	createVMArgsConfig.sh LOCAL SET
+	./createVMArgsConfig.sh LOCAL SET
 	```	
 
 ## Setup
